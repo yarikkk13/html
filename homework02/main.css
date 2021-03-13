@@ -1,0 +1,44 @@
+.header {
+    background: silver;
+    color: rgb(183, 68, 23);
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    background: black;
+    color: green;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#first {
+    width:465px;
+    height: 290px;
+}
+
+.main2 {
+    margin: 10px;
+    margin-left: 120px;
+    margin-bottom: 2px ;
+    color: rebeccapurple;
+    background: antiquewhite;
+}
+
+.main2>h2{
+    margin-top: 0px;
+    padding-left: 25px;
+    color: orange;
+    background: aquamarine;
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: #8d1cff;
+    background: aliceblue;
+}
