@@ -1,20 +1,38 @@
-body style {
-    background: aliceblue;
-}
 .part01>p {
     padding-left: 20px;
+    color: #ffb171;
 }
 
 .part02 {
-
+    margin-left: 20px;
+    color: #ffe15e;
 }
 
 .part03 {
-
+    display: flex;
+}
+.part03>img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+.part03>p{
+    color: rebeccapurple;
+    margin-left: 15px;
 }
 
-.part04 {
+.part04>p {
+    color: #ffe15e;
+
+}
+.part04>ul{
+    border: solid;
 }
 
-.part05 {
+.part05>p{
+    color: tomato;
+}
+
+.part05>ol{
+    border: solid tomato;
+
 }
