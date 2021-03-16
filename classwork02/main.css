@@ -1,7 +1,17 @@
-.part01 {
-    border-left: 10px;
+.part01>p {
+    padding-left: 20px;
 }
 
 .part02 {
-    display: flex;
+
+}
+
+.part03 {
+
+}
+
+.part04 {
+}
+
+.part05 {
 }
