@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+}
+.wrap {
+    width: 100%;
+    background: azure;
+    height: 600px;
+}
