@@ -6,3 +6,21 @@
     background: azure;
     height: 600px;
 }
+.a {
+    width: 100%;
+    height: 200px;
+}
+
+.content {
+    display: flex;
+}
+.b{
+    width: 70%;
+    height: 400px;
+    background: tomato;
+}
+.c{
+    width: 30%;
+    height: 400px;
+    background: silver;
+}
