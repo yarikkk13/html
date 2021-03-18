@@ -22,7 +22,6 @@
 }
 .artdiv {
     width: 100%;
-    height: 800px;
     display: flex;
 }
 .article{
@@ -32,7 +31,19 @@
 .division{
     width: 33%;
     height: 800px;
+    display: flex;
+    flex-direction: column-reverse;
 }
+.aside1 {
+    width: 100%;
+    height: 47%;
+}
+.aside2 {
+    width: 100%;
+    height: 43%;
+}
+
+
 .footer{
     width: 100%;
     height: 100px;
