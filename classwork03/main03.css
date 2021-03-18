@@ -9,7 +9,7 @@
 }
 .wrap {
     width: 100%;
-    height: 1210px;
+    height: 1200px;
     background: silver;
 }
 .header {
@@ -27,7 +27,39 @@
 .article{
     width: 67%;
     height: 800px;
+    display: flex;
+    flex-direction: column;
 }
+.uparticle{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.smallheader{
+    width: 100%;
+    height: 33%;
+}
+.sections{
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.section1{
+    width: 100%;
+    height: 20%;
+}
+.section2{
+    width: 100%;
+    height: 20%;
+}
+.smallfooter{
+    width: 100%;
+    height: 10%;
+}
+
 .division{
     width: 33%;
     height: 800px;
