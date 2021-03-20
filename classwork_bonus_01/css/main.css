@@ -56,6 +56,8 @@ nav {
 
 .firs-screen {
     padding: 93px 101px 93px 245px;
+    display: flex;
+    justify-content: space-between;
 }
 .first-screen-left{
     width: 45%;
@@ -99,4 +101,42 @@ nav {
     color: #292929;
     border: none;
     margin-top: 120px;
+}
+.first-screen-right{
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.first-screen-right img{
+    width: 100%;
+}
+
+.play_button_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 152px;
+    height: 152px;
+    border: 1px solid #ff9638;
+    border-radius: 50%;
+}
+.play_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    height: 96px;
+    border: 1px solid #ff9638;
+    border-radius: 50%;
+}
+.play_button_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 82px;
+    border: 3px solid #ff9638;
+    border-radius: 50%;
+    background-color: silver;
 }
