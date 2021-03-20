@@ -1,0 +1,525 @@
+let screen992 = window.matchMedia('all and (max-width: 992px)');
+let label = document.querySelectorAll('.tabs_program li label');
+
+function screenWidth992() {
+    if (screen992.matches) {
+        document.querySelector('.video-review-wrap').classList.add('video-slide');
+    }
+}
+
+function programMedia() {
+    label.forEach(el => {
+        el.classList.remove('desk');
+    });
+}
+
+
+let buttonMenu = document.querySelector('.c-hamburger');
+
+let menuMobile = document.querySelector('.menu-mobile');
+buttonMenu.onclick = () => {
+    menuMobile.classList.toggle('left-0');
+};
+
+// end menu
+
+// c-hamburger
+document.querySelector('.c-hamburger').addEventListener('click', function (e) {
+    e.preventDefault();
+    this.classList.toggle('is-active');
+});
+// end c-hamburger
+
+
+// =========================================================================================================================
+
+// mobile drop nav menu
+let courseMobile = document.querySelector('#course');
+
+courseMobile.onclick = () => {
+    const dropDown = document.querySelector('.dropdown-menu-mobile');
+    const flag = document.querySelector('.flag');
+    dropDown.classList.toggle('is-visible-mobile');
+
+    if (dropDown.classList.contains('is-visible-mobile')) {
+        flag.style.transform = 'rotate(180deg)';
+        dropDown.style.height = dropDown.scrollHeight + 'px';
+        courseMobile.classList.add('border-menu');
+        courseMobile.style.borderTop = '1px solid rgba(119,187,247, 1)';
+        courseMobile.style.borderLeft = '1px solid rgba(119,187,247, 1)';
+        courseMobile.style.borderRight = '1px solid rgba(119,187,247, 1)';
+    } else {
+        flag.style.transform = '';
+        dropDown.style.height = '';
+        courseMobile.classList.remove('border-menu');
+        courseMobile.style.borderTop = '';
+        courseMobile.style.borderLeft = '';
+        courseMobile.style.borderRight = '';
+    }
+};
+// end mobile drop nav menu
+
+
+// =========================================================================================================================
+
+// modal
+let modalWindow = document.querySelector('.body-modal');
+let modalButton = document.querySelectorAll('.button-modal');
+let consultationButton = document.querySelectorAll('.consultation-modal');
+let popapButton = document.querySelectorAll('.call');
+let popapWindow = document.querySelector('.body-popap');
+let closeButton = document.querySelectorAll('.close-image');
+
+function modal(element, button) {
+    button.forEach(el => {
+        el.onclick = () => {
+            element.classList.add('flex-d');
+        }
+    })
+}
+
+modal(modalWindow, modalButton);
+// modal(modalWindow, consultationButton, closeButton);
+
+popapButton.forEach(el => {
+    el.onclick = () => {
+        popapWindow.classList.add('flex-d');
+    }
+})
+
+closeButton.forEach(el => {
+    el.onclick = () => {
+
+        try {
+            popapWindow.classList.remove('flex-d');
+            modalWindow.classList.remove('flex-d');
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+})
+
+consultationButton.forEach(button => {
+    button.onclick = ()=> {
+        popapWindow.classList.add('flex-d')
+    }
+})
+
+// end modal
+
+// =========================================================================================================================
+//плавний скрол до якоря
+$(document).ready(function () {
+    //плавний скрол до якоря програма курса
+    // $('.list-item a').click(function () {
+    //     // возьмем содержимое атрибута href, должен быть селектором, например начинать # с или .
+    //     let scrollElem = $(this).attr('href');
+    //
+    //     if ($(scrollElem).length != 0) {
+    //         $('html, body').animate({scrollTop: $(scrollElem).offset().top}, 500);
+    //     }
+    // });
+
+
+    //плавний скрол до якоря програма курса
+    $('.desk').click(function () {
+        // возьмем содержимое атрибута href, должен быть селектором, например начинать # с или .
+        let scrollElem = $(this).attr('href');
+
+        if ($(scrollElem).length != 0) {
+            $('html, body').animate({scrollTop: $(scrollElem).offset().top}, 500);
+        }
+    });
+
+
+    // $(document).on("scroll", function () {
+    //     if ($(document).scrollTop() >= 1) {
+    //         $("header").addClass("small");
+    //         $(".timer-wrap-content").addClass("small");
+    //     } else {
+    //         $("header").removeClass("small");
+    //         $(".timer-wrap-content").removeClass("small");
+    //     }
+    // });
+});
+
+const headers = document.querySelector('.headers');
+
+window.addEventListener('scroll', function() {
+    if (pageYOffset > 1) {
+        headers.classList.add('small');
+    }
+    else {
+        headers.classList.remove('small');
+    }
+});
+
+
+// =========================================================================================================================
+
+// accordion from java complex
+let javaListTitle = document.querySelectorAll(' .java-complex-list-title');
+let javaListText = document.querySelectorAll('.java-complex-list-text');
+javaListTitle.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+        e.target.nextElementSibling.classList.toggle('is-visible');
+        if (e.target.nextElementSibling.classList.contains('is-visible')) {
+            e.target.nextElementSibling.style.height = e.target.nextElementSibling.scrollHeight + 'px';
+        } else {
+            e.target.nextElementSibling.style.height = '';
+        }
+    });
+
+    javaListText.forEach(function (el) {
+        if (el.classList.contains('is-visible')) {
+            el.style.height = el.scrollHeight + 'px';
+        }
+    })
+});
+// end accordion from java complex
+
+// =========================================================================================================================
+
+// =========================================================================================================================
+
+//border blue in index.html type 3
+
+
+let threeItemBtn = document.querySelectorAll('.three-index-item-footer');
+
+threeItemBtn.forEach(el => {
+    el.onmouseenter = (e) => {
+        e.target.previousElementSibling.style.border = '1px solid #3298F2';
+        e.target.previousElementSibling.children[0].style.border = '1px solid #3298F2';
+    };
+
+    el.onmouseleave = (e) => {
+        e.target.previousElementSibling.style.border = '';
+        e.target.previousElementSibling.children[0].style.border = '';
+    };
+});
+
+
+let fourItemBtn = document.querySelectorAll('.four-index-slider-item-footer');
+
+fourItemBtn.forEach(el => {
+    el.onmouseenter = (e) => {
+        e.target.previousElementSibling.style.border = '1px solid #FF9638';
+    };
+
+    el.onmouseleave = (e) => {
+        e.target.previousElementSibling.style.border = '';
+    };
+});
+
+
+// =========================================================================================================================
+// about
+// =========================================================================================================================
+
+
+// type 6 border change color
+let sixButton = document.querySelectorAll('.six-about-item-button');
+sixButton.forEach(function (el) {
+    el.addEventListener('mouseenter', function (e) {
+        e.target.style.backgroundColor = '#3298F2';
+        e.target.offsetParent.style.borderColor = '#3298F2';
+        e.target.parentElement.children[0].style.borderColor = '#3298F2';
+    });
+
+    el.addEventListener('mouseleave', function (e) {
+        e.target.style.backgroundColor = '';
+        e.target.offsetParent.style.borderColor = '';
+        e.target.parentElement.children[0].style.borderColor = '';
+    })
+});
+// end type 6 border change color
+
+
+// play video youtube with
+function playMobile(play) {
+    play.forEach((el) => {
+        el.onclick = () => {
+            let videoOverlay = document.querySelector('#video-overlay');
+            let id = el.children[0].dataset.id;
+            let videoReviewWrap = '';
+
+
+            videoOverlay.classList.add('open');
+
+
+            videoReviewWrap = `
+            <iframe width="500" height="360" src="https://youtube.com/embed/${id}"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen id="Youtube"></iframe>
+        `;
+
+            videoOverlay.innerHTML += videoReviewWrap;
+
+        }
+    });
+}
+
+playMobile(document.querySelectorAll('.play'));
+// playMobile(document.querySelectorAll('.project-item'));
+
+
+$('.video-overlay, .video-overlay-close').on('click', function (e) {
+    e.preventDefault();
+    close_video('.video-overlay.open');
+});
+
+$(document).keyup(function (e) {
+    if (e.keyCode === 27) {
+        close_video('.video-overlay.open');
+    }
+});
+
+function close_video(classClose) {
+    $(classClose).removeClass('open').find('iframe').remove();
+}
+
+// mobile play video youtube
+function playDeskTop(play) {
+    play.forEach((el) => {
+        el.onclick = () => {
+            let videoOverlay = document.querySelector('#video-overlay');
+            let id = el.dataset.id;
+            let videoReviewWrap = '';
+            videoOverlay.classList.add('open');
+
+
+            videoReviewWrap = `
+            <iframe width="500" height="360" src="https://youtube.com/embed/${id}?autoplay=1"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen id="Youtube"></iframe>
+        `;
+
+            videoOverlay.innerHTML += videoReviewWrap;
+        }
+    });
+}
+
+let playDesk = document.querySelectorAll('.play-button-img');
+playDeskTop(playDesk);
+playDeskTop(document.querySelectorAll('.web-dev-btn-play'));
+playDeskTop(document.querySelectorAll('.video-course-play'));
+playDeskTop(document.querySelectorAll('.play-video-button-icon-outer'));
+playDeskTop(document.querySelectorAll('.play-button-wrap'));
+playDeskTop(document.querySelectorAll('.project-item'));
+
+// ================================================================================================================
+
+function activeLink(linka, classLink) {
+    $(linka).each(function () {
+        let location = window.location.href;
+        let link = this.href;
+        if (location == link) {
+            $(this).addClass(classLink);
+        }
+    });
+}
+
+activeLink('.header-menu li a', 'active-link');
+activeLink('.nav-menu .dropdown-menu li a', 'drop-active-link');
+activeLink('.menu-mobile ul li a', 'active-link');
+
+
+// Accordion 4
+function accord4(elem, elem2) {
+
+    elem.onclick = () => {
+        elem.children[3].classList.toggle('is-visible');
+        if (elem.children[3].classList.contains('is-visible')) {
+            elem.children[3].style.height = elem.children[3].scrollHeight + 'px';
+            elem.children[1].classList.add('rotate-180');
+
+        } else {
+            elem.children[3].style.height = '';
+            elem.children[1].classList.remove('rotate-180');
+        }
+    };
+
+    if (elem2.classList.contains('is-visible')) {
+        elem2.style.height = elem2.scrollHeight + 'px';
+    }
+}
+
+
+//ИНТЕНСИВ ДЛЯ НОВИЧКОВ media 768
+function intensiveForBeginners() {
+    let list = document.querySelectorAll('.list-inner768');
+    list.forEach((el) => {
+        el.onclick = () => {
+            el.classList.toggle('is-active');
+            if (el.classList.contains('is-active')) {
+                el.children[1].style.height = el.children[1].scrollHeight + 'px';
+
+            } else {
+                el.children[1].style.height = '';
+            }
+        }
+    })
+
+}
+
+
+//ЭТОТ КУРС ДЛЯ ТЕБЯ ЕСЛИ ТЫ :
+function courseForYou() {
+    let thisCourse = document.querySelectorAll('.this-course-item768');
+
+    thisCourse.forEach((el) => {
+        el.onclick = () => {
+            el.classList.toggle('is-active');
+            if (el.classList.contains('is-active')) {
+                el.children[2].style.height = el.children[2].scrollHeight + 'px';
+
+            } else {
+                el.children[2].style.height = '';
+            }
+        }
+    })
+}
+
+courseForYou();
+
+//=======================================================================================================================
+// add class mobile when with 992px
+function w992(elementClass) {
+    const mql = window.matchMedia('all and (max-width: 992px)');
+    if (mql.matches) {
+        elementClass.forEach((el) => {
+            el.classList.add('mobile');
+        });
+    } else {
+        elementClass.forEach((el) => {
+            el.classList.remove('mobile');
+        });
+    }
+}
+
+
+//=======================================================================================================================
+function mobile() {
+    const mobile = document.querySelectorAll('.mobile');
+    mobile.forEach((el) => {
+
+        el.onclick = function () {
+            el.classList.toggle('is-active');
+            if (el.classList.contains('is-active')) {
+                el.children[1].style.height = el.children[1].scrollHeight + 'px';
+            } else {
+                el.children[1].style.height = '';
+            }
+        }
+    })
+
+    mobile.forEach((el) => {
+        if (el.classList.contains('is-active')) {
+            el.children[1].style.height = el.children[1].scrollHeight + 'px';
+        }
+    })
+}
+
+function accordionJS(elementClass, numChild) {
+    let contentMobile = document.querySelectorAll(elementClass);
+
+    contentMobile.forEach(el => {
+        el.onclick = () => {
+            el.classList.toggle('is-active');
+            if (el.classList.contains('is-active')) {
+                el.children[numChild].style.height = el.children[numChild].scrollHeight + 'px';
+            } else {
+                el.children[numChild].style.height = '';
+            }
+        };
+
+        if (el.classList.contains('is-active')) {
+            el.children[numChild].style.height = el.children[numChild].scrollHeight + 'px';
+        }
+    })
+}
+
+
+const buttonTimer = document.querySelector('.thanks-timer-button');
+
+if (buttonTimer) {
+    const timerForm = document.querySelector('.timer-form');
+    buttonTimer.onclick = () => {
+        timerForm.classList.add('open');
+    };
+
+    const closeTimerForm = document.querySelector('.timer-form .video-overlay-close');
+    closeTimerForm.onclick = () => {
+        timerForm.classList.remove('open');
+    };
+}
+
+function resizeWidth(classElement, classElementMobile, widthScreen) {
+    const wrap = document.querySelectorAll(classElement);
+    const mql = window.matchMedia(`all and (max-width: ${widthScreen}px)`);
+
+    if (mql.matches) {
+        wrap.forEach((el) => {
+            el.classList.add(classElementMobile);
+        });
+
+        const whyOwu = document.querySelectorAll('.why-owu-item');
+        whyOwu.forEach(el => {
+            el.classList.add(classElementMobile);
+        });
+
+    } else {
+        wrap.forEach((el) => {
+            el.classList.remove(classElementMobile);
+        });
+    }
+}
+
+function addClassForMobile(currentClass, addClass) {
+    let screenMobile = window.matchMedia('all and (max-width: 992px)');
+    if (screenMobile.matches) {
+        document.querySelector(currentClass).classList.add(addClass);
+    }
+}
+
+let locationX = window.location.href;
+
+function thisLinks(linka, classLink) {
+
+    let pageLink = document.querySelectorAll(linka);
+    pageLink.forEach(el => {
+        const [href] = el.getAttribute('href').split('.')
+        const hrefConc = 'http://owu/' + href;
+        if (locationX === hrefConc) {
+            el.classList.add(classLink)
+        }
+
+    })
+}
+
+thisLinks('.header-menu li a', 'active-link')
+thisLinks('.nav-menu .dropdown-menu li a', 'drop-active-link');
+thisLinks('.menu-mobile ul li a', 'active-link');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
