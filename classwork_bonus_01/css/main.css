@@ -58,7 +58,7 @@ nav {
     padding: 93px 101px 93px 245px;
 }
 .first-screen-left{
-    width: 40%;
+    width: 45%;
 }
 .first-screen-left h3{
     font-weight: 900;
@@ -74,4 +74,29 @@ nav {
     text-transform: uppercase;
     color: #292929;
 }
-.first-screen-left h3{}
+.first-screen-left h1 span{
+    color: #3298F2;
+}
+.first-screen-text{
+    margin-top: 60px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #333333;
+}
+.first-screen-text p:last-child{
+    font-weight: bold;
+    margin-top: 40px;
+}
+.first-screen-text button{
+    width: 382px;
+    height: 61px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    border-radius: 5px;
+    background-color: #ff9638;
+    color: #292929;
+    border: none;
+    margin-top: 120px;
+}
