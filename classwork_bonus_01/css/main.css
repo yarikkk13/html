@@ -55,5 +55,23 @@ nav {
 }
 
 .firs-screen {
+    padding: 93px 101px 93px 245px;
+}
+.first-screen-left{
     width: 40%;
 }
+.first-screen-left h3{
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: #ff9638;
+}
+.first-screen-left h1{
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: #292929;
+}
+.first-screen-left h3{}
