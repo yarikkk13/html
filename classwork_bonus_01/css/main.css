@@ -120,6 +120,7 @@ nav {
     height: 152px;
     border: 1px solid #ff9638;
     border-radius: 50%;
+    position: absolute;
 }
 .play_button{
     display: flex;
@@ -139,4 +140,8 @@ nav {
     border: 3px solid #ff9638;
     border-radius: 50%;
     background-color: silver;
+}
+.play_button_item i{
+    font-size: 22px;
+    color: white;
 }
