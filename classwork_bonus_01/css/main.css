@@ -107,6 +107,7 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
 }
 .first-screen-right img{
     width: 100%;
@@ -121,6 +122,10 @@ nav {
     border: 1px solid #ff9638;
     border-radius: 50%;
     position: absolute;
+    left: -180px;
+    bottom: -15px;
+
+
 }
 .play_button{
     display: flex;
